@@ -1,0 +1,89 @@
+/* Global Styles */
+body {
+    background-color: chocolate;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    text-align: center;
+}
+
+/* Container Styles */
+#block {
+    margin: 2% auto;
+    padding: 10px;
+    max-width: 500px;
+    background-color: gray;
+    border: 2px dashed black;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 25px;
+}
+#space{
+    margin: 10px auto;
+}
+
+/* Todo List Styles */
+ul {
+
+    list-style-type: none;
+    padding: 0;
+    border: 2px;
+}
+
+li {
+    padding: 1px;
+    font-size:20px;
+    color: black;
+    text-align: center;
+    border-radius: 8px;
+    text-align: center;
+}
+.todotext {
+    padding: 1px;
+    font-size:20px;
+    color: black;
+    text-align: center;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Completed Todos*/
+.completed {
+    text-decoration: line-through;
+    color: red;
+}
+/* Style buttons */
+.removeBtn {
+    margin-left: 5px;
+    cursor: pointer; /* Mouse pointer on hover */
+  }
+  
+  /* Darker background on mouse-over */
+  .removeBtn:hover {
+    color: aliceblue;
+  }
+/*Input field*/
+#inputTodo {
+    padding: 5px;
+    font-size: 15px;
+    border: 1px solid green;
+    border-radius: 5px;
+    margin-right: 0%;
+}
+/*Button*/
+#addBtn {
+    padding: 0.5rem 1rem;
+    margin-top: 1%;
+    font-size: 20px;
+    background-color: darkgreen;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/*Button on*/
+#addBtn:hover {
+    background-color: green;
+}
