@@ -1,45 +1,89 @@
 /* Global Styles */
-body {
-    background-color: chocolate;
-    font-family: Arial, sans-serif;
+html{
+    background-color: black;
+    background-image: linear-gradient(to top, rgba(255,128,128) 1% , rgba(255,200,200) 100% );
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
     margin: 0;
-    padding: 0;
 }
-h1 {
-    text-align: center;
+
+@keyframes bumpInTop{
+    from {transform: translateY(-200px);}
+    50% {transform: translateY(100px);}
+    to {transform: translateY();}
+    from{ opacity: 0%;}
+    to{ opacity: 100%;}
+}
+@keyframes fadeIn{
+    from{ opacity: 0%;}
+    80%{ opacity: 0%;}
+    to{ opacity: 100%;}
 }
 
 /* Container Styles */
-#block {
-    margin: 2% auto;
+#block{
+
+    animation-name: bumpInTop;
+    animation-duration: 0.8s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+
+
+    margin: 1% auto;
     padding: 10px;
     max-width: 500px;
-    background-color: gray;
-    border: 2px dashed black;
-    border-radius: 8px;
+    background-color: rgb(255, 255, 255);
     text-align: center;
     font-size: 25px;
+    box-shadow: 0.2px 0.2px 10px 1px rgb(0, 0, 0, 0.2);
 }
+
 #space{
     margin: 10px auto;
 }
 
+
 /* Todo List Styles */
 ul {
-
     list-style-type: none;
     padding: 0;
     border: 2px;
+    background-color: white;
+    max-width: 500px;
 }
 
+
+@keyframes smallBump{
+from{transform: translateY(25px);}
+to{transform: translateY()}
+}
 li {
+
+    animation: smallBump;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+
     padding: 1px;
     font-size:20px;
     color: black;
     text-align: center;
     border-radius: 8px;
     text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
 }
+#todospan:hover{
+    text-decoration: line-through;
+    cursor: pointer;
+}
+#todospan{
+    animation: smallBump;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    cursor: pointer;
+}
+
 .todotext {
     padding: 1px;
     font-size:20px;
@@ -48,42 +92,94 @@ li {
     border-radius: 8px;
     text-align: center;
 }
+#errorText{
+    font-size:15px;
+    color: red
+}
+.redblink{
+    animation-name: errortext;
+    animation-duration: 0.5s;
+    animation-iteration-count: 3;
+    transition: 1s;
+}
+
+@keyframes errortext {
+    0%,100% { opacity: 0;}
+    50% { opacity: 1;}
+    
+
+}
+
+p{
+    animation-name: fadeIn;
+    animation-duration: 1;
+}
+h1{
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-delay: 0.1s;
+    animation-fill-mode: forwards;
+    opacity: 0%;
+}
 
 /* Completed Todos*/
 .completed {
+    color: gray;
     text-decoration: line-through;
-    color: red;
 }
+
+
 /* Style buttons */
 .removeBtn {
     margin-left: 5px;
     cursor: pointer; /* Mouse pointer on hover */
   }
-  
-  /* Darker background on mouse-over */
-  .removeBtn:hover {
-    color: aliceblue;
-  }
+
 /*Input field*/
 #inputTodo {
+    opacity: 0%;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-delay: 0.25s;
+    animation-fill-mode: forwards;
     padding: 5px;
     font-size: 15px;
-    border: 1px solid green;
-    border-radius: 5px;
-    margin-right: 0%;
+    border: 1px solid gray;
+    border-radius: 4px;
 }
+
 /*Button*/
 #addBtn {
-    padding: 0.5rem 1rem;
-    margin-top: 1%;
-    font-size: 20px;
-    background-color: darkgreen;
-    color: white;
-    border: none;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    opacity: 0%;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-delay: 0.25s;
+    animation-fill-mode: forwards;
+    padding: 5px 10px 5px 10px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: whitesmoke;
+    border-style:outset;
+    border-color: lightgrey;
     border-radius: 5px;
     cursor: pointer;
 }
-/*Button on*/
-#addBtn:hover {
-    background-color: green;
+#addBtn:hover{
+    background-color: grey;
+}
+label{
+    animation-name: fadeIn;
+    animation-duration: 0.8s;
+}
+#countTodo{
+    opacity: 0%;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.18s;
+    font-size: 16px;
+    font-weight: bold;
+
 }

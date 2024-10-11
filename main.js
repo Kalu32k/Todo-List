@@ -9,9 +9,11 @@ const countTodo = document.querySelector("countTodo")        // Todo count
 let completedCount = 0;
 const todoArray=[];
 
-// Importing the function from another javascript file
-import { theButton } from "./secret.js";
+/* // Importing the function from another javascript file
+import { theButton } from "./secret.js"; */
 
+    // Show number of completed todos
+  document.getElementById("completed").textContent = completedCount
 
  // Change status of the todo
  function changeStatus(text,status){
@@ -28,7 +30,7 @@ function deleteFromArray(text){
 
 
 // Trigger theButton when the mouseover happens
-addBtn.addEventListener("mouseenter", theButton);
+addBtn.addEventListener("click",addTodo);
 
 // Add the todo when the button is clicked
 addBtn.addEventListener("click", addTodo);
@@ -50,7 +52,8 @@ function addTodo(){
     // Condition check that input must not be empty
     if (text.length == 0) {
         errorText.innerText = "Du måste skriva något";
-        return;  // Return early if no text is entered
+        errorText.setAttribute("class","redblink")
+        return; 
     }
     else {
         errorText.innerText =""
@@ -62,7 +65,7 @@ function addTodo(){
 
     const itemLabel = document.createElement("span")
     itemLabel.setAttribute("class","todotext");
-   // querySelector("span").setAttribute("class","todotext");
+    itemLabel.setAttribute("id","todospan");
     itemLabel.innerText = text;
     listedItem.appendChild(itemLabel);
 
@@ -114,7 +117,9 @@ function addTodo(){
         console.log(todoArray)
         }
 
-        //countTodo.innerText= `Number of completed todos: `+ completedCount;
+       // countTodo.innerText= `Number of completed todos: `+ completedCount;
+            // Show number of completed todos
+document.getElementById("completed").textContent = completedCount
 
             })
 
@@ -134,10 +139,11 @@ function addTodo(){
        
     //console.log(completedCount)
     console.log(todoArray)
-       
-        
+
+
 
  
 
 
     }
+    
