@@ -51,7 +51,7 @@ function addTodo(){
 
     // Condition check that input must not be empty
     if (text.length == 0) {
-        errorText.innerText = "Du måste skriva något";
+        errorText.innerText = "Input must not be empthy";
         errorText.setAttribute("class","redblink")
         return; 
     }
